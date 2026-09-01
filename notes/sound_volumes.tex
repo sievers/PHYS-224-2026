@@ -1,0 +1,200 @@
+\documentclass[letterpaper,11pt,preprint]{aastex}
+\usepackage{graphics,graphicx}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{color}
+\citestyle{aas}
+
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in} \setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in} \setlength{\headheight}{0in}
+\setlength{\headsep}{0in} \setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\makeatletter
+\renewcommand{\section}{\@startsection%                                                                                                                                                                    
+{section}{1}{0mm}{-\baselineskip}%                                                                                                                                                                         
+{0.5\baselineskip}{\normalfont\Large\bfseries}}%                                                                                                                                                           
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+%%%%% Start of document %%%%%                                                                                                                                                                              
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+
+\begin{document}
+\pagestyle{plain}
+
+\section{How Loud are Sounds?}
+
+In the previous note, we saw that atmsopheric pressure is close to
+100,000 Pascals, equivalent to about 1 kg per square centimetre.  It
+may not surprise you to hear that what we hear as sound comes from
+changing pressure, so when we talk about how ``loud'' a sound is, what
+we really mean from a physics perspective is ``how much is the
+pressure changing?''  It's probably not a lot, at least relative to
+atmospheric pressure, because sounds don't knock us over while a good
+gust of wind would.  How much lower, though?
+
+We'll try to make a reasonable estimate based on some sensible
+guesses.  The answer won't be perfect, but we'll at least be in a
+position to say ``is it a thousandth of atmospheric pressure?  A
+millionth?  A billionth?''  This sort of answer is called an
+``order-of-magnitude estimate'' -- getting a perfect answer would be
+much, much harder, but at least we can get started with our
+order-of-magnitude guess.  Instruments like flutes or violins or
+trombones would be hard to estimate, because it's really difficult to
+know how much of the work a musician is doing ends up as sound.  In
+fact, the answer is usually ``not very much'' because most of the
+energy ends up getting dissipated as heat in the instrument rather
+than coming out as sound.  One case we can estimate is a piano.
+Because of the way a piano is played, we can put an upper limit on how
+much energy goes into sound.  Presumably nearly all of you have heard
+a piano in a concert at some point as well.  
+
+\subsection{How Much Work in a Piano Note?}
+The most basic definition of work is ``force times distance.''  If I
+know how much force I exerted on something, and how far I pushed it, I
+know how much work I did.  The metric unit of work or energy is a
+Joule, the work required to apply a force of one Newton over one
+metre.  As an example, how much work does it take to climb a flight of
+stairs?  Let's say you're 100 kg, and a flight of stairs goes up 3m.
+Newton's second law is $F=ma$, force equals mass times acceleration,
+and at the Earth's surface, the acceleration from gravity is about 10
+$m/s^2$.  The force from gravity on us is then $100 kg \times 10 m/s^2
+= 1000 kg m/s^2=1000 N$.  To climb the stairs, we have to exert a
+force of at least 1000 N upwards to counteract gravity, and that force
+is doing the work.  If we climb 3$m$, then force times distance is
+$1000N \times 3m = 3000 N-m = 3000J = 3kJ$.  In most of the world, the
+energy in food is listed directly in $kJ$, but here in Canada, it's
+usually in kilo-calories, which we usually just call calories.  One
+(kilo-)calorie is 4.19 $kJ$, so it takes a bit less than a calorie to
+climb a flight of stairs.
+
+Let's redo the same calculation, except now for a piano.  We don't
+know how much of the work we do will end up as sound, but we know it
+can't be more than the work we did pressing a key.  How much work do
+we do pressing a key?  Work is force times distance, so let's start
+with a distance.  Picture a piano in your head - about how far does a
+key go down?  It's a lot more than a millimetre, but a lot less than a
+metre, so 1 cm seems reasonable.  Your intrepid instructor measured
+the key travel on the piano at his house, and indeed the travel is
+almost exactly 1 cm.  How about force?  One way to estimate is to
+imagine different weights on a piano key.  What sort of weight would
+it take resting on a key to push the key down and make a sound?  Well,
+your instructor set a bottle of whiskey on the keyboard and let it
+push some keys down.  The bottle weight 1.3 kg, and it pushed down 4
+keys at what sounded like a \textit{mezzo-piano} to my ear.  The total
+force is $1.3*10=13 N$ split amongst 4 keys, so the force on each key
+was $13/4 \sim 3N$.  A force of $3N$ over a distance of $1cm=0.01m$
+then is a total work of $0.03J$.  The amount of energy might be (much)
+less than this, but it cannot be more.
+
+Since we can hear a pianist playing at a \textit{mezzo-piano} volume
+inside a concert hall, we know that $0.03J$ will be easily heard.  How
+do we convert that work to a change in pressure, though?  For
+simplicity, we can assume we have a partition in our concert hall with
+half the air on one side and half on the other.  We push on that
+partition, compressing the air on one side and expanding it on the
+other, until we've done our $0.03J$ of work.  You're hopefully now
+getting an intuitive sense for just how small the pressure changes
+from typical sounds are.  A thirtieth of a Joule, spread across a
+concert hall, is not going to get you a very large pressure change.
+
+Look at a picture of Montreal's Maison Symphonique.  The stage is
+about 20m across, the hall is about as high as it is wide, and it's a
+few times longer than it is wide.  For ease, let's call the dimensions
+20x20x50m.  I set up my partition that splits the hall in half, so now
+I have two volumes of 10x20x50, and I'm going to move along the 10m
+direction.  What is the net force on the partition?  Well, if I
+haven't moved the partition yet, the net force is zero because the
+pressures on both sides match.  What happens after I move it a
+distance $dx$ though?  Well, now the density on one side has gone up
+by a factor of $dx/10$, and the density on the other side has gone
+down by the same amount.  For simplicity, we'll assume the temperature
+stays the same\footnote{In fact, this is not a good assumption as the
+air on the compressed side heats up as well, but we can ignore that
+for our order-of-magnitude estimate.}.  From the ideal gas law with
+temperature fixed, we know pressure times volume is a constant, so
+whatever factor the volume went down is, the pressure must have gone
+up by the same factor.  Let's say we  move our partition by 1 cm, then
+what happens?  The new volume is (10m-0.01m)/(10m) = (1-0.001)m, or
+one part in a thousand smaller.  That means the new pressure is a part
+in a thousand larger, so the change in pressure is 100 kPa/1000=100
+Pascals.  Force is pressure times area, so the force on our partition
+100 times the area of the partition.  We're moving in the 10m
+direction, so the area is 20m by 50m, or $1000m^2$.  The total force
+on the partition is 100*1000 or 100,000N.  The work we did was that
+force times the 1cm distance we moved, so $100,000N \times 0.01m =
+1000J$.  That's way, way more than the 0.03J we have, so the distance
+moved must be much less than 1 cm.  At this point, the easiest way to
+get our actual answer is to take what happens at 1 cm, and adjust it
+to get the answer we want.  If we move by a distance $dx$, then the
+pressure changes by a factor of $dx/x$, so the force must be
+proportial to $dx/x$ as well.  The work is force times distance, and
+the distance is $dx$, so the work must scale like $dx^2/x$.  Since $x$
+doesn't change (after all, the room size is fixed), so the work we do
+goes like $dx^2$.  The actual work we did was 0.03J, so we must have
+\begin{eqnarray}
+  (dx/0.01)^2 = (0.03/1000) \\
+  dx/0.01 = \sqrt{0.03/1000}\\
+  dx=0.01\times \sqrt{0.03/1000}=5.47\times 10^{-5}m \sim 50 \mu m
+\end{eqnarray}
+
+
+Now we have at least a rough estimate for sound pressure.  Our piano
+note in a concert hall moves the partition by about 50 microns out of
+10 metres, a fractional change of $5\times 10^{-6}$.  A fractional
+volume change of five parts per million will lead to a similar
+fractional pressure change, and since the pressure is 100,000 Pascals,
+the \textit{change} in pressure is on the order of half a Pascal.  We
+know this is an overestimate, because we assumed all of the energy
+from pressing the piano key ended up as sound, and that none of that
+sound leaked out of the concert hall, but at least we're in the
+ballpark.  If you go to \textit{e.g.} Wikipedia, you'll see that sound
+pressures of half a Pascal is actually really loud - about 88 dB, or
+just above the threshold where hearing protection is required to
+prevent hearing loss.  The true answer is about a factor of 10 or so
+lower, or an order-of-magnitude.  We call these order-of-magnitude
+estimates for a reason!
+
+For fun, let's see if we can do even better.  There are two main
+assumptions we made that probably weren't very good.  The first is
+that all the energy in the key press ended up as sound.  It's tricky
+to estimate this well - to get an idea, there's a paper by Seok Jae
+Bang (2009) that estimates the acoustic efficiency of a Yamaha
+upright.  They find that the efficiency is only about 1\%, so we
+should decrease our sound energy by a factor of 100.  Second, we
+assumed that all the sound energy ended up in the hall \textit{at the
+  same time}.  That's also obviously wrong.  Why?  Well, if I play a
+piano note and hold the key down, it takes quite a while (many
+seconds) for the sound volume to drop, so the energy takes a while to
+go from vibrations of the piano strings to vibrations of the air, say
+10 seconds.  However, in a concert hall, if I make a noise, the time
+it takes the sound volume to drop (the reverb time) is a lot less,
+more like a second.  That means that at any given time, only about 1s
+(reverb)/10s (piano sustain) or 10\% of the total sound energy we'll
+put out is contained in the hall.  With these correction factors, our
+sound energy is down by a factor of 1000 from our initial
+overestimate, so the pressure is down by a factor of the square root
+of that, so a better estimate is 0.01 Pascal for our sound pressure.
+That's actually pretty good - Wikipedia tells us that's in the range
+of normal conversation (0.002-0.02 Pascals, or 40-60 dB).
+
+One final calculation, also for fun, I'd like to do is to compare the
+sound pressure we just calculated to change in pressure from changing
+altitude.  The height scale of the atmosphere is close to 10 km, which
+is why when you climb a tall mountain you notice there's a lot less
+air, but not when you climb stairs.  If we assume the pressure goes
+from 100 kPa to 0 when we go up 10 km (again, we're after a rough
+estimate), then the change per metre is 100,000/(10km=10,000m), or 10
+Pascals/metre.  Just standing up will change the pressure by 10
+Pascals, which is much, much bigger than the sounds!  Our 0.01 Pascal
+improved estimate for a piano volume corresponds to 0.01/10=0.001m or 1
+mm.  Because we (usually) change altitude slowly and smoothly, our ears
+do not register those pressure changes as sounds.  If they did, we'd
+all go deaf just from getting out of bed in the morning.  
+
+
+
+
+\end{document}

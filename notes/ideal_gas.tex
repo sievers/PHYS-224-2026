@@ -1,0 +1,285 @@
+\documentclass[letterpaper,11pt,preprint]{aastex}
+\usepackage{graphics,graphicx}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{color}
+\citestyle{aas}
+
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{9in}
+\setlength{\topmargin}{-0.0625in} \setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0in} \setlength{\headheight}{0in}
+\setlength{\headsep}{0in} \setlength{\hoffset}{0in}
+\setlength{\voffset}{0in}
+
+\makeatletter
+\renewcommand{\section}{\@startsection%                                                                                                                                                                    
+{section}{1}{0mm}{-\baselineskip}%                                                                                                                                                                         
+{0.5\baselineskip}{\normalfont\Large\bfseries}}%                                                                                                                                                           
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+%%%%% Start of document %%%%%                                                                                                                                                                              
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%                                                                                                                                                                              
+
+\begin{document}
+\pagestyle{plain}
+
+\section{Pressure and the Ideal Gas Law}
+
+If you were to zoom in on a little piece of air, you would see a bunch
+of molecules, mostly nitrogen and oxygen, bouncing around randomly.
+The molecules would be spaced relatively far apart, occupying only about
+0.1\% of the volume of the air, and 99.9\% empty space.  The molecules
+regularly smack into each other and bounce off, with each individual
+molecule getting hit billions of times per second.  When we zoom back
+out, somehow this messy, chaotic system turns into something quite
+orderly that can transport music from an intrument to our ears.  We're
+going to try to understand at least a little bit about how this
+happens, and, eventually (but not in this note), how this messy
+microscopic picture actually can affect what we hear.
+
+The first concept we want to work out is \textit{pressure}.  Pressure
+is defined to be the force per unit area a medium exerts on a
+surface.  All sorts of things can cause pressures in physics,
+including light, magnetic fields, even quantum mechanics.  Air and
+water pressures are the ones we most commonly experience directly, and
+in this class we'll just look at air pressure.
+
+\textit{Example: Pressure on a Jar of Pickles}\newline
+To get a sense of how pressure behaves, let's try to open a jar of
+pickles.  The pressure at sea level is about 100,000 Pascals, or 100
+kPa, where a Pascal is a Newton per square metre.  This isn't really a
+very intuitive number, so let's break it down.  Nobody I know actually
+thinks in Newton's; have you ever picked up a suitcase and said
+``this weighs about 200 Newtons''?  Me neither.  We can convert
+between mass and weight using Newton's second law
+\begin{equation}
+  F=ma
+\end{equation}
+Here, $F$ is the force, $m$ is the mass, and $a$ is the acceleration,
+the rate of change of velocity.  Let's also be careful about units -
+$m$ is in $kg$, a velocity is in $m/s$, so a \textit{change} in
+velocity per unit time is $(m/s)/s$ or $m/s^2$.  In an equation, the
+units on both sides have to match, so the units of force must be the
+units of mass times the units of acceleration, of $kg-m/s^2$.  This is
+a Newton - the force required to make a mass of 1 $kg$ speed up by 1
+$m/s$ each second.  The acceleration from Earth's gravity $g$ at the
+surface of the Earth is about $9.8 m/s$, which we'll round to $10 m/s$.
+If we want the gravitational force, we can swap in $g$ for $a$ in
+Newton's second law, giving $F_g=mg$.  If we have a weight of 1 $kg$
+then, it takes a force of about 10$N$ to counter the force from
+gravity.
+
+If we go back to atmospheric pressure, then 100,000$N$ is the force
+required to hold up $100,000/10=10,000 kg$ or 10 tons.  That's a
+\textit{huge} number, so why don't all the windows in your house blow
+out?  Well, the pressure on the inside of your house is the same as
+the outside, so the forces from the pressures cancel out.  If the
+pressure inside your house was lower, though, your windows would feel
+a big force and would most likely fail spectacularly.
+
+The pressure inside a pickle jar is indeed much lower than
+atmospheric.  If you've ever canned anything, you know that you heat
+up whatever you're canning, put it in a jar, seal it up, and let it
+close.  When gasses cool, their pressure drops, so the pressure inside
+a jar is around 20-25\% lower than atmospheric.  Let's say the
+diameter of the jar lid is 10$cm$ or 0.1$m$, so the area is $\pi r^2
+\sim 3 (0.1/2)^2 \sim 0.008m^2$.  The force is from the amosphere is
+then $0.008 \times 10^5 = 800N$ downwards, or about an 80 $kg$ weight on top of
+the lid.  If the pressure inside is 75\% of atmospheric, then there's
+an upward force of $600N$, so the total force on the lid is 200$N$,
+equivalent to 20$kg$.  When you unscrew the lid, you have to counter
+that force, which is why it's hard to open a jar the first time.  Once
+you're open, though, the pressures are the same, and the next time you
+open is much easier!
+
+\section{Pressure from a Gas}
+Now that we (hopefully!) have at least a little bit of sense for what
+pressure feels like, let's look at where it comes from.  If we zoom in
+on our pickle jar lid, we see a bunch of air molecules zipping around,
+bouncing off the lid.  Every time a molecule bounces off the lid, it's
+velocity changes, and a change in velocity means an acceleration.
+Newton's second law tells us that means the lid had to exert a force
+on the molecule.  For a single molecule, the force is tiny, but there
+are a \textit{huge} number of collisions each second, and their
+combined effects are not tiny.  Let's try to work out what this looks
+like now.
+
+We'll start by considering a long, thin tube (like a very, very long
+straw).  The tube is closed at the ends, and the area of each end
+we'll call $A$.  We've got a bunch of molecules bouncing around inside
+our tube, and we'll try to work out the force on the end.  The first
+thing to notice is that we don't care about up/down or front/back
+motions if we're only looking at the end.  Let's say we're looking at
+the left end - then any molecule near it moving to the left will
+bounce, and it will start moving to the right.  Picture a bounce pass
+in basketball - the horizontal speed doesn't change, and the vertical
+speed flips from down to up.
+
+Now that we know what we're looking for, let's try to work out the
+force.  We're going to estimate a total mass bouncing off the end and
+the change in velocity, then plug those into Newton's second law to
+get a force.  Let's call the ``typical'' speed in the $x-$direction $v_x$,
+the typical mass of each molecule $m$, and the number of molecules per
+unit volume $n$.  We're going to make the simplifying assumption that
+half the molecules are moving to the left with $v_x$ and half to the
+right.  What happens at the left end cap?  If we wait for a
+length of time $t$, then half of our molecules will move a distance
+$v_xt$ to the left, and half will move the same distance to the
+right.  If we ignore collisions and assume each air molecule is just
+doing its own thing, then during our time interval $t$, every air
+molecule moving to the left within $v_xt$ of the end cap will bounce
+off the cap.  Because the area of our  tube is $A$, then every
+left-moving molecule with a volume of $v_xtA$ is going to bounce off.
+The number of molecules is going to be the number of things moving
+left per volume which is $n/2$ times the volume, so we have $v_x
+tAn/2$ collisions per second.  The total mass that bounces off our end
+cap is the number of objects that hit the end times the mass per object, or
+$mv_xtAn/2$.  The \textit{change} in velocity is going to be $2v_x$,
+which happens over a time $t$, so the acceleration is $2v_x/t$.  The
+force is now $mv_xtAn/2 \times 2v_x/t = mv_x^2 An$.  To get the force
+per unit area, we take the force and divide by the area $A$, leaving
+us with the simple expression:
+\begin{equation}
+  P=mv_x^2 n
+  \label{eqn:ideal_gas_kinetic}
+\end{equation}
+Now, you might remember that $E=1/2 mv^2$ is the kinetic energy of an
+object.  We can rewrite the previous equation to be $P=2(1/2 mv_x^2) n
+= 2E_x n$ where $E_x$ is the kinetic energy from the velocity in the
+$x-$direction.  What is that energy, though?  Well, you may remember
+being told that ``temperature is a measure of the average energy''.
+Energy is in Joules, temperature (if you're a physicist) is in Kelvin,
+and in our case we can go back and forth between them using
+\begin{equation}
+  E_x=\frac{1}{2}k_BT
+  \label{eqn:Boltzmann}
+\end{equation}
+where $T$ is temperature and $k_B$ is one of the fundamental constants
+of nature, Boltzmann's constant.  The factor of $1/2$ comes from
+statistical mechanics, and its derivation is well beyond the scope of
+this class, but I hope you don't mind taking the result on faith.
+
+Once we have Equation~\ref{eqn:ideal_gas_kinetic}, we plug in
+Equation~\ref{eqn:Boltzmann}, and we have the physicists' version of
+the ideal gas law:
+\begin{equation}
+  P=nkT
+  \label{eqn:ideal_gas_one}
+\end{equation}
+We can go halfway to a chemist's version by noting if we have $N$
+things in a volume $V$, that $n=N/V$.  Plug that into
+Equation~\ref{eqn:ideal_gas_one} and we have
+\begin{eqnarray}
+  P=N/V kT\\
+  PV=NkT
+\end{eqnarray}
+In this case, $N$ is the number of molecules we have in our volume
+$V$, but Chemists like to work with moles of things.  I need
+Avogadro's number $N_A=6.02e23$ of things to get one mole.  I can
+stick in two cancelling copies of $N_A$ into the previous equation to
+get:
+\begin{eqnarray}
+  PV=N (N_A/N_A)kT\\
+  PV=(N/N_A) (kN_A)T\\
+  PV=N_m rT
+\end{eqnarray}
+where $r\equiv kN_A$ is known as the ideal gas constant, and $N_m$ is
+the number of moles of stuff we have.  Boltzmann's constant is
+$1.38e-23 J/K$, and so $r=1.38e-23 J/K \times 6.02e23/mole = 8.31
+J/K/mole$ -- a number you may remember from chemistry class (if you
+took chemistry).
+
+Before doing the recap, I'd like to make an aside, in case any of you
+are still worried about this derivation.  Feel free to skip this,
+however.  Pretending every molecule is
+moving with the same speed either in the $+x$ or $-x$ direction seems
+like a pretty big cheat.  And it is!  In reality, the molecules will
+all have random velocities, so to do this right, we'd need to average
+over those velocities.  If you look at
+Equation~\ref{eqn:ideal_gas_kinetic}, the right thing to do is to
+split up all our molecules into groups that are moving with the same
+velocity.  We then sum over all those little velocity slices.  Forces
+add, so pressures have to add, which leaves us with
+$$P=\sum_{slice} m v_{x,slice}^2n_{slice}$$
+Because the mass is the same for everybody, we can pull it out of the
+sum.  We can also define $f_{slice}=n_{slice}/n$, that is $f_{slice}$
+is the \textit{fraction} of molecules with velocity $v_{slice}$.  That
+turns our sum into:
+\begin{equation}
+  P=mn\sum_{slice}v_{x,slice}^2f_{slice}
+\end{equation}
+That sum is exactly what we mean by the average of something, so in
+this case, what we should have used was the average value of $v_x^2$,
+which we denote with angle brackets: $\left < v_x^2\right >$. That
+leaves us with
+\begin{equation}
+  P=mn\left <v_x^2 \right > = 2n \left <m v_x^2/2 \right >
+\end{equation}
+That expression is just the average kinetic energy from the
+$x-$velocity, which we know is $\frac{1}{2}kT$ (well, you would know
+if you had taken a course in statistical mechanics, but if you
+haven't, just take my word for it).  When we made our seemingly
+horribly crude approximation that all molecules move with the same
+speed, we would generally expect that we'd get a slightly wrong (but
+close!) answer.  In this case, though, once we saw what our answer
+was, we can actually see that we got exactly the right answer because
+the average we would need to do is exactly the average statistical
+mechanics already did for us.
+
+We've now derived from first principles, only using one extra bit of
+information from statistical mechanics, that if I put a gas inside a
+container, the container will feel a pressure from the gas.  The more
+stuff I put in the container, the higher the pressure will be.  The
+hotter the gas, again, the higher the pressure will be.  You'll notice
+that the mass of the things dropped out, so it doesn't matter
+\textit{what} kind of gas I put in, just how many molecules.
+
+One final note - you might say ``Sure, this gives us the
+\textit{average} force, but in reality it's a bunch of molecules
+hitting a wall.  Does that matter?''  It might!  But probably not.
+Let's take the pickle jar again.  The typical $x-$velocity is
+$\frac{1}{2}mv_x^2=\frac{1}{2}kT$ which we can solve to get
+\begin{equation}
+  v_x=\sqrt{\frac{kT}{m}}
+\end{equation}
+The mass of a mole of protons/neutrons is around 1
+gram\footnote{Originally, chemists wanted a mole of oxygen to be 16
+grams, physicists wanted a mole of hydrogen to be one gram, so they
+compromised and said a mole of carbon-12 would be 12 grams.}.  The
+average atomic weight of air is around 30 (nitrogen is 28, oxygen is
+32), so the mass of an air molecule is $30/N_A\ g=30/N_A/1000kg \sim
+5e-26 kg$.  We have to measure room temperature in Kelvin, so add 273
+to temperature in Celsius to get $T\sim 293K$.  That gives a typical
+velocity of
+\begin{equation}
+  v_x=\sqrt{\frac{1.38e-23\times 293}{5e-26} }=280 m/s
+\end{equation}
+If we count the collisions in one second, our pickle jar lid then
+picks up half the molecules in a volume of $280 m/s *0.008 m^2 *1 s
+\sim 2.2 m^3 = 2200l$.  The density of air is about one gram per
+litre, so 2200 grams of air or 2.2 $kg$ bounce off our pickle lid.  We
+know that the mass of an air molecule is $5e-26 kg$, so we have
+$2.2/5e-26=4.4e25$ air molecules bouncing off our pickle jar lid every
+second.  Because the air molecules are moving randomly, some seconds
+we'll get a few more bouncing off of us, some seconds a few less.  I
+won't derive it here, but the typical scatter in that goes like the
+square root of the number of things, so we'd expect
+$\sqrt{4.4e25}=6.6e12$.  While that may seem like a large number (6
+trillion more air molecules hit me this second than hit me last
+second!), because the total number of collisions is so huge, you
+almost certainly would never notice it.  What we can measure is the
+force on the lid, and the \textit{fraction} change in that is
+$6.6e12/4.4e25=1.5e-13$.  That is, the randomness in the force on our
+jar lid is less than a part per trillion.  That tiny change in force
+is so small you'd never notice it.  However, if you zoom way in and
+look on very short times, the randomness \textit{isn't} tiny, and you
+can see very small particles jitter around in what is
+called Brownian Motion.  A young scientist worked out much of the math
+behind this in 1905 in order to predict the (random) motions of small
+objects buffetted by collisions with individual gas or water
+molecules.  That scientist's name?  Albert Einstein.
+
+
+
+\end{document}
