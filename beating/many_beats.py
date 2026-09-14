@@ -18,8 +18,8 @@ tot=0.0
 
 #steps=[0,2,4,5,7,9,11,12, 14, 16, 17, 19,21,23,24]#notes in a two-octave major scale
 #steps=[0,2,4,5,7,9,11,12]#notes in a major scale
-#steps=[0,2,4,0,0,2,4,0,4,5,7,7,4,5,7,7] #possibly familiar sounding
-steps=[0] #a single note so we can hear typical beating
+steps=[0,2,4,0,0,2,4,0,4,5,7,7,4,5,7,7] #possibly familiar sounding
+#steps=[0] #a single note so we can hear typical beating
 
 spacing=2**(1/12) #the standard spacing of half-steps, assuming equal tempering
 freqs=nu0*(spacing**(np.asarray(steps))) #turn our notes into actual frequencies
