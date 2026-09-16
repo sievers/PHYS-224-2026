@@ -5,18 +5,16 @@ from scipy.io import wavfile
 nu0=220.  #reference frequency.
 
 dnu=0.15  #1/this should be roughly how long a cycle takes.  
-nnu=16    #this should set roughly how sharp in time a beat is.  larger=shorter in time
+nnu=8    #this should set roughly how sharp in time a beat is.  larger=shorter in time
 
 tmax=40  #how long to run.  if this is much larger than 1/dnu, you will get many repeats
 fs=44100 #probably don't want to change this...
 t=np.arange(fs*tmax)/fs  #time vector so we can evaluate our sine waves
 
-
-
-
 tot=0.0
 
 #steps=[0,2,4,5,7,9,11,12, 14, 16, 17, 19,21,23,24]#notes in a two-octave major scale
+
 #steps=[0,2,4,5,7,9,11,12]#notes in a major scale
 steps=[0,2,4,0,0,2,4,0,4,5,7,7,4,5,7,7] #possibly familiar sounding
 #steps=[0] #a single note so we can hear typical beating
@@ -41,4 +39,4 @@ for j in range(len(freqs)):
 
 tot=tot/np.abs(tot).max()
 sd.play(tot,fs)
-wavfile.write(outname+'.wav',fs,(2**15*tot/np.abs(tot).max()).astype('int16'))
+#wavfile.write(outname+'.wav',fs,(2**15*tot/np.abs(tot).max()).astype('int16'))

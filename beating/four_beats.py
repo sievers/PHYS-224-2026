@@ -28,7 +28,7 @@ freqs=nu0*(spacing**(np.asarray(steps))) #turn our notes into actual frequencies
 
 #phase_noise=1;outname=outname+'_random' #1 for random phases, 0 for no phase noise.
 #phase_shift=0;outname=outname+'_nophase' #1 for random phases, 0 for no phase noise.
-phase_shifts=[0,0.0,0,0]
+phase_shifts=[0,0.25,0,0]
 
 
 for j in range(nnu):
