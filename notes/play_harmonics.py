@@ -7,14 +7,19 @@ fs=44100 #standard audio sample rate
 
 t=np.arange(tmax*fs)/fs
 
-amps=[1, 0, 1, 0, 1 ,0, 0.5] #amplitude of harmonics.  These are the numbers you should play with
+amps=[0, 0.5, .33, 0.25, 0.2 ,0.16, 0.14] #amplitude of harmonics.  These are the numbers you should play with
+#amps=(1.0/np.arange(1,10))**1
+#amps[0]=0
+#amps[1::2]=0
 #amps=[1]
 
 #sum all the harmonics together, with the amplitudes we set.
 tot=0
 for i in range(len(amps)):
     k=i+1
-    tot=tot+np.sin(t*nu0*2*np.pi*k)*amps[i]
+    if (amps[i]>0):
+        print("adding in frequency: ",nu0*k)
+        tot=tot+np.sin(t*nu0*2*np.pi*k)*amps[i]
 
 tot=tot/tot.max()
 
