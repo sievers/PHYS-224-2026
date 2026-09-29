@@ -7,9 +7,10 @@ fs=44100 #standard audio sample rate
 
 t=np.arange(tmax*fs)/fs
 
-amps=[0, 0.5, .33, 0.25, 0.2 ,0.16, 0.14] #amplitude of harmonics.  These are the numbers you should play with
-#amps=(1.0/np.arange(1,10))**1
-#amps[0]=0
+#amps=[1, 0.5, .33, 0.25, 0.2 ,0.16, 0.14] #amplitude of harmonics.  These are the numbers you should play with
+#amps=[1,1,1,1,1,1,1]
+amps=(1.0/np.arange(1,10))**0.5
+amps[0]=0
 #amps[1::2]=0
 #amps=[1]
 
