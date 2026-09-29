@@ -41,7 +41,7 @@ rat=2**(1/12)
 samp2=shift_pitch(sample,rat**7)
 #rats=[rat**-4,1,rat**3] #for an equal-tempered major chord
 #rats=[4/5,1,6/5] #for an ideal major chord
-#rats=[1.5**-4*4,1,1.5**-3*4] #for a pythagorean chord
+rats=[1.5**-4*4,1,1.5**-3*4] #for a pythagorean chord
 
 
 do_minor=False
