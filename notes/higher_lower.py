@@ -10,7 +10,7 @@ t=np.arange(tmax*fs)/fs
 nu0=220*(1+np.random.rand())
 updown=(2*(np.random.rand()>0.5)-1)
 print('updown is: ',updown)
-cents=1  #percent of a halfstep to move
+cents=2  #percent of a halfstep to move
 rat=(2**(1/12)-1)*cents/100
 print('ratio is: ',rat)
 nu1=nu0*(1+updown*rat)
