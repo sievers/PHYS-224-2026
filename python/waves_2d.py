@@ -3,8 +3,8 @@ from matplotlib import pyplot as plt
 plt.ion()
 
 
-xmax=40
-lamda=2
+xmax=20
+lamda=1
 k=2*np.pi/lamda
 
 xvec=np.linspace(-xmax,xmax,1001)
@@ -15,9 +15,9 @@ dt=0.1
 omega=v*k
 
 
-pos=[[0,0]] #this line gives you a single source at the origin
+#pos=[[0,0]] #this line gives you a single source at the origin
 
-#pos=[[2,0],[-2,0]] #this line gives you two sources, but radiating in-phase
+pos=[[2,0],[-2,0,0.0]] #this line gives you two sources, but radiating in-phase
 #pos=[[0,-0.1,0],[0,0.1,0.0]] #this line gives you two very close sources.  in vs out of phase will look quite different
 #pos=[[0,0,0],[0,0,0],[0.1,0,0.5],[-0.1,0,0.5]] #gives a brighter central source, with two close neighbor.  Behavior again is very different if in-phase or out-of-phase
 #pos=[[-2,0,0],[-1.5,0,0],[-1,0,0],[-0.5,0,0],[0,0,0],[0.5,0,0],[1,0,0],[1.5,0,0],[2,0,0]]
