@@ -4,7 +4,7 @@ plt.ion()
 
 
 xmax=20
-lamda=1
+lamda=4
 k=2*np.pi/lamda
 
 xvec=np.linspace(-xmax,xmax,1001)
@@ -22,7 +22,15 @@ pos=[[2,0],[-2,0,0.0]] #this line gives you two sources, but radiating in-phase
 #pos=[[0,0,0],[0,0,0],[0.1,0,0.5],[-0.1,0,0.5]] #gives a brighter central source, with two close neighbor.  Behavior again is very different if in-phase or out-of-phase
 #pos=[[-2,0,0],[-1.5,0,0],[-1,0,0],[-0.5,0,0],[0,0,0],[0.5,0,0],[1,0,0],[1.5,0,0],[2,0,0]]
 
-#xx=np.linspace(-6,6,21);pos=[[xxx,0,0] for xxx in xx] #gives you a source at every point in xx
+xx=np.linspace(-3,3,41);pos=[[xxx,xmax,0] for xxx in xx] #gives you a source at every point in xx
+
+#this will make a broad line
+#xx=np.linspace(-30,30,121);pos=[[xxx,-xmax,0] for xxx in xx]
+
+#broad line with a hole
+#xx=np.linspace(-30,-4,53);xx=np.hstack([xx,-xx]);pos=[[xxx,-xmax,0] for xxx in xx]
+
+
 
 
 nsrc=len(pos)
@@ -50,6 +58,8 @@ while True:
     #plt.imshow(tot,extent=[xvec[0],xvec[-1],xvec[-1],xvec[0]])
     for i in range(nsrc):
         plt.plot(pos[i][0],pos[i][1],'r*')
+    plt.xlim([xvec[0],xvec[-1]])
+    plt.ylim([xvec[-1],xvec[0]])
     plt.pause(0.01)
     
     
