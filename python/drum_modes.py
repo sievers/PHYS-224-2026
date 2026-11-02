@@ -9,8 +9,8 @@ x,y=np.meshgrid(vec,vec)
 r=np.sqrt(x**2+y**2)
 th=np.arctan2(x,y)
 
-n=3
-m=5
+n=6
+m=3
 lam_vec=jn_zeros(m,n+1)
 lam=lam_vec[n-1]
 u=jv(m,lam*r)*np.cos(m*th)

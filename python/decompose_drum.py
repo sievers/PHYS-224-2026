@@ -72,9 +72,9 @@ t2=time.time()
 print('mode time: ',t2-t1)
 #assert(1==0)
 
-x_0=0.4
-y_0=0.4
-sig=0.05
+x_0=0.0
+y_0=0.0
+sig=0.1
 z_init=np.exp(-0.5*( (x-x_0)**2+(y-y_0)**2)/sig**2)
 zvec=np.ravel(z_init)[mask]
 fitp=np.linalg.inv(modes.T@modes)@(modes.T@zvec)

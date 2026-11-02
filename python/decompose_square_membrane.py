@@ -35,13 +35,15 @@ y=np.ravel(yy)
 modes,freqs=get_modes(x,y,kmax)
 fwee=np.reshape(modes[:,1*kmax+0],[n,n])
 
+
 x_0=0.0
-y_0=0.0
-sig=0.2
+y_0=0.7
+sig=0.05
 zvec=np.exp(-0.5*( (x-x_0)**2+(y-y_0)**2)/sig**2)
 fitp=np.linalg.inv(modes.T@modes)@(modes.T@zvec)
 pred=modes@fitp
 pp=vec2mat(pred)
+
 
 #generate what we think the sound might be like
 f0=100 #pick frequency of fundamental
