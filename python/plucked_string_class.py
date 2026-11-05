@@ -49,7 +49,7 @@ nmode=45
 
 #generate a triangle with a smoothed top
 xpeak=0.2 #where along the string we pluck
-dx=0.15   #how "fat" our finger is
+dx=0.01   #how "fat" our finger is
 y=get_triangle(xpeak,n)
 i1=int((xpeak-dx)*n)
 i2=int((xpeak+dx)*n)
@@ -71,4 +71,17 @@ plt.show()
 
 tmax=10
 fs=44100
-t=np.arange(tmax*fs)/tmax
+t=np.arange(tmax*fs)/fs
+
+nu0=220
+tot=0
+tau_rel=1/(2+np.arange(nmode))
+
+tau_f =0.7#time constant of fundamental
+tau=tau_f*(tau_rel/tau_rel[0])**2
+       
+
+for i in range(nmode):
+    tot=tot+amps[i]*np.sin(2*np.pi*t*(i+1)*nu0)*np.exp(-t/tau[i])
+
+sd.play(tot/tot.max())
