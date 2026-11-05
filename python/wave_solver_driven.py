@@ -9,7 +9,7 @@ def bcs_tied(mystring):
     mystring.vpad[1:-1]=mystring.v
     mystring.vpad[0]=0
     mystring.vpad[-1]=0
-def bcs_driven(mystring,om=0.009): #0.0185 does pretty well at 3rd mode,  0.006 looks to be fundamental
+def bcs_driven(mystring,om=0.012): #0.0185 does pretty well at 3rd mode,  0.006 looks to be fundamental
     mystring.ypad[1:-1]=mystring.y
     mystring.ypad[0]=0.2*np.sin(mystring.time*om)
     mystring.ypad[-1]=0
