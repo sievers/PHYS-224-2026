@@ -45,7 +45,7 @@ def spline_chunk(y,i1,i2):
 
 
 n=1001
-nmode=45
+nmode=85
 
 #generate a triangle with a smoothed top
 xpeak=0.2 #where along the string we pluck
@@ -54,6 +54,52 @@ y=get_triangle(xpeak,n)
 i1=int((xpeak-dx)*n)
 i2=int((xpeak+dx)*n)
 ysmooth=spline_chunk(y,i1,i2)
+
+x=np.linspace(0,np.pi,n)
+c1=2*np.mean(ysmooth*np.sin(x*1))
+plt.clf()
+plt.plot(ysmooth)
+plt.plot(c1*np.sin(x))
+c2=2*np.mean(ysmooth*np.sin(x*2))
+plt.plot(c2*np.sin(2*x))
+plt.plot(c2*np.sin(2*x)+c1*np.sin(1*x))
+
+nmode=40
+c=np.zeros(nmode)
+modes=np.zeros([nmode,len(x)])
+for i in range(nmode):
+    c[i]=2*np.mean(ysmooth*np.sin((i+1)*x))
+    modes[i,:]=np.sin((i+1)*x)
+
+k=1+np.arange(nmode)
+tau=1/(1+k)
+tau0=0.2
+tau=tau/tau[0]*tau0 #makes sure fundamental decays in tau0 seconds
+
+    
+#tot=modes.T@c
+plt.plot(tot)
+plt.show()
+
+
+nu0=230
+tmax=10
+fsamp=44100
+t=np.arange(tmax*fsamp)/fsamp
+tot=0
+tot=0
+
+for i in np.arange(nmode):
+    decay=np.exp(-t/tau[i])
+    tot=tot+np.sin(nu0*2*np.pi*t*(i+1))*decay*c[i]
+
+
+#for i in range(nmode):
+#    tot=tot+c[i]*np.sin(nu0*2*np.pi*t*(i+1))
+
+sd.play(tot,fsamp)
+
+assert(1==0)
 
 #now find how much of each mode is in our plucked string
 
