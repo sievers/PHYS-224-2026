@@ -54,15 +54,15 @@ def play_wscope(fname,dt=0.5):
         plt.ylim([1,1e7])
         plt.pause(0.01)
 
-#fname='Copland_Fanfare_For_The_Common_Man.m4a'
+fname='Copland_Fanfare_For_The_Common_Man.m4a'
 #fname='/Users/sievers/Music/iTunes/iTunes\ Media/Music/Compilations/Die\ Walküre_\ Levine_MET\ disc\ 4/4-01\ Die\ Walküre\,\ Act3\ Sc1.m4a'
 
 #fname="/Users/sievers/Music/iTunes/iTunes\ Media/Music/Matthew\ Morley\,\ Robert\ Jones\;\ St.\ Bride\'s\ Church\ Choir/Bruckner_\ Motets/01\ Bruckner_\ Os\ Justi\,\ Wab\ 30.m4a"
 #fname="01\ Bruckner_\ Os\ Justi,\ Wab\ 30.m4a"
 #fname="/Users/sievers/Music/iTunes/iTunes\ Media/Music/Compilations/Chopin_\ Etudes/24\ Chopin_\ Etude\ \#12\ In\ C\ Minor\,\ Op.\ 25.m4a"
-fname="/Users/sievers/Music/iTunes/iTunes\ Media/Music/Canadian\ Brass/Bach_\ Art\ of\ the\ Fugue/17\ Bach_\ Chorale\ Prelude\ -\ _Vor\ deinen\ Thron\ tret\\'\ ich\ hiermit_.m4a"
+#fname="/Users/sievers/Music/iTunes/iTunes\ Media/Music/Canadian\ Brass/Bach_\ Art\ of\ the\ Fugue/17\ Bach_\ Chorale\ Prelude\ -\ _Vor\ deinen\ Thron\ tret\\'\ ich\ hiermit_.m4a"
 #dat,fsamp=read_song(fname)
-fname="/Users/sievers/Music/iTunes/iTunes Media/Music/Canadian Brass/Bach_ Art of the Fugue/01 Bach_ The Art of the Fugue - Contrapunctus 1 - Andante sostenuto.m4a";fname=escape_string(fname)
+#fname="/Users/sievers/Music/iTunes/iTunes Media/Music/Canadian Brass/Bach_ Art of the Fugue/01 Bach_ The Art of the Fugue - Contrapunctus 1 - Andante sostenuto.m4a";fname=escape_string(fname)
 
 
 
